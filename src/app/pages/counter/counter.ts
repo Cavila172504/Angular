@@ -9,7 +9,7 @@ import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
   margin: 5px;
   width: 60px;
  }`,
- changeDetection: ChangeDetectionStrategy.OnPush,
+changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Counter {
   counter = 1;
