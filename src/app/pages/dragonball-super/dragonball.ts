@@ -1,4 +1,4 @@
-import { Component, signal } from "@angular/core";
+import { Component, signal} from "@angular/core";
 
 
 interface Character {
@@ -7,19 +7,17 @@ interface Character {
     powerLevel: number;
 }
 @Component({
- templateUrl: './dragonball.html',
- 
-})
-export class DragonballPageComponent { 
+ templateUrl: './dragonball-super.html',
 
-    name = signal ('gohan');
-    powerLevel = signal (5000);
+})
+export class DragonballPagesuperComponent { 
+
+    name = signal ('');
+    powerLevel = signal (0);
 
     characters = signal<Character[]>([             
     {id:1,name:'goku',powerLevel:9001},
-   // {id:1,name:'vegeta',powerLevel:8001},
-    //{id:1,name:'piccolo',powerLevel:6001},
-    //{id:1,name:'Yamcha',powerLevel:3001},
+    {id:1,name:'vegeta',powerLevel:8001},
     
 ]);
 
