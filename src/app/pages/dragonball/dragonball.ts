@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Component, signal } from "@angular/core";
 
 
@@ -45,12 +44,3 @@ resetFields(){
 } 
 
 }
-=======
-import { Component } from "@angular/core";
-
-@Component({
- templateUrl: './dragonball.html',
-
-})
-export class DragonballPageComponent { }
->>>>>>> origin/main

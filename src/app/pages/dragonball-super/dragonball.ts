@@ -1,4 +1,5 @@
 import { Component, signal} from "@angular/core";
+import { CharacterList } from "../../components/shared/navbar/dragonball/character-list/character-list";
 
 
 interface Character {
@@ -8,22 +9,24 @@ interface Character {
 }
 @Component({
  templateUrl: './dragonball-super.html',
+ selector: 'dragonball-page-super',
+ imports: [CharacterList],
 
 })
-export class DragonballPagesuperComponent { 
+export class DragonballPagesuperComponent {
 
     name = signal ('');
     powerLevel = signal (0);
 
-    characters = signal<Character[]>([             
+    characters = signal<Character[]>([
     {id:1,name:'goku',powerLevel:9001},
     {id:1,name:'vegeta',powerLevel:8001},
-    
+
 ]);
 
 addCharacter(){
 if (this.name() || !this.powerLevel() || this.powerLevel() <=0 ) {
-    return;       
+    return;
 }
  const newCharacter: Character = {
     id: this.characters().length + 1,
@@ -33,12 +36,12 @@ if (this.name() || !this.powerLevel() || this.powerLevel() <=0 ) {
  this.characters.update((list) => [...list, newCharacter]);
  this.resetFields();
 
-   
 
-} 
+
+}
 resetFields(){
     this.name.set('');
-    this.powerLevel.set(0); 
-} 
+    this.powerLevel.set(0);
+}
 
 }
