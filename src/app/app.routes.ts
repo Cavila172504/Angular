@@ -22,7 +22,7 @@ export const routes: Routes = [
     },
     {
       path : 'dragonball-super',
-      component : DragonballPagesuperComponent, 
+      component : DragonballPagesuperComponent,
     },
     {
       path : '**',

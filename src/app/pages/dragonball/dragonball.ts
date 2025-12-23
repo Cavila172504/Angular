@@ -8,24 +8,24 @@ interface Character {
 }
 @Component({
  templateUrl: './dragonball.html',
- 
+
 })
-export class DragonballPageComponent { 
+export class DragonballPageComponent {
 
     name = signal ('gohan');
     powerLevel = signal (5000);
 
-    characters = signal<Character[]>([             
+    characters = signal<Character[]>([
     {id:1,name:'goku',powerLevel:9001},
    // {id:1,name:'vegeta',powerLevel:8001},
     //{id:1,name:'piccolo',powerLevel:6001},
     //{id:1,name:'Yamcha',powerLevel:3001},
-    
+
 ]);
 
 addCharacter(){
 if (this.name() || !this.powerLevel() || this.powerLevel() <=0 ) {
-    return;       
+    return;
 }
  const newCharacter: Character = {
     id: this.characters().length + 1,
@@ -35,12 +35,12 @@ if (this.name() || !this.powerLevel() || this.powerLevel() <=0 ) {
  this.characters.update((list) => [...list, newCharacter]);
  this.resetFields();
 
-   
 
-} 
+
+}
 resetFields(){
     this.name.set('');
-    this.powerLevel.set(0); 
-} 
+    this.powerLevel.set(0);
+}
 
 }
