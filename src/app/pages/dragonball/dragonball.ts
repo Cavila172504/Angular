@@ -24,14 +24,14 @@ export class DragonballPageComponent {
 ]);
 
 addCharacter(){
-if (this.name() || !this.powerLevel() || this.powerLevel() <=0 ) {
+  if (!this.name() || this.powerLevel() <= 0) {
     return;
-}
- const newCharacter: Character = {
+  }
+  const newCharacter: Character = {
     id: this.characters().length + 1,
     name: this.name(),
     powerLevel: this.powerLevel(),
- };
+  };
  this.characters.update((list) => [...list, newCharacter]);
  this.resetFields();
 

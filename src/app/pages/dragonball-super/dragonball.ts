@@ -1,16 +1,17 @@
 import { Component, signal} from "@angular/core";
-import { CharacterList } from "../../components/shared/navbar/dragonball/character-list/character-list";
+import { CharacterList } from "../../components/dragonball/character-list";
+import { Character } from "../../interface/character.interface";
+import { CharacterApp } from "../../components/dragonball/character-app/character-app";
 
-
-interface Character {
-    name: string;
-    id: number;
-    powerLevel: number;
-}
+//interface Character {
+   // name: string;
+    //id: number;
+    //powerLevel: number;
+//}
 @Component({
  templateUrl: './dragonball-super.html',
  selector: 'dragonball-page-super',
- imports: [CharacterList],
+ imports: [CharacterList, CharacterApp],
 
 })
 export class DragonballPagesuperComponent {
@@ -19,24 +20,13 @@ export class DragonballPagesuperComponent {
     powerLevel = signal (0);
 
     characters = signal<Character[]>([
-    {id:1,name:'goku',powerLevel:9001},
-    {id:1,name:'vegeta',powerLevel:8001},
+    {id:1,name:'goku',powerlevel:9001},
+    {id:1,name:'vegeta',powerlevel:8001},
 
 ]);
 
-addCharacter(){
-if (this.name() || !this.powerLevel() || this.powerLevel() <=0 ) {
-    return;
-}
- const newCharacter: Character = {
-    id: this.characters().length + 1,
-    name: this.name(),
-    powerLevel: this.powerLevel(),
- };
- this.characters.update((list) => [...list, newCharacter]);
- this.resetFields();
-
-
+addCharacter(newCharacter: Character){
+  this.characters.update((list) => [...list, newCharacter]);
 
 }
 resetFields(){

@@ -4,37 +4,19 @@
 
 <section>
   <div class="col-12 col-sm-6">
-    <h3>Agregar personaje:{{name()}}</h3>
-    <input
-    type= "text"
-    class="form-control"
-    placeholder="Nombre del personaje"
-    [value]="name()"
-    (change)="name.set(txtName.value)"
-    (input)="name.set(txtName.value)"
-    #txtName
 
+    <dragonball-character-app
+    (newCharacter)="addCharacter($event)"
     />
 
-     <input
-    type= "number"
-    class="form-control mt-2"
-    placeholder="Nivel de poder"
-    [value]="powerLevel()"
-    (input)="powerLevel.set(+txtpowerLevel.value)"
-    #txtpowerLevel
-    />
-     <input type= "number" class="form-control mt-2" placeholder="Poder de ataque"/>
-
-
-     <button class="addCharater()"class= "btn-primary ">Agregar</button>
   </div>
-
   <div class="col-12 col-sm-6 ">
 
-    <dragonball-character-list />
+    <dragonball-character-list
+    listName="Listado de personajes "
+    [characters]="characters()" />
 
-    
+
   </div>
 </section>
 

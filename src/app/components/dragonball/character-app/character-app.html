@@ -1,0 +1,28 @@
+<h3>Agregar {{name()}} </h3>
+
+<input
+    type= "text"
+    class="form-control"
+    placeholder="Nombre del personaje"
+    [value]="name()"
+    (change)="name.set(txtName.value)"
+    (input)="name.set(txtName.value)"
+    #txtName
+
+    />
+
+     <input
+    type= "number"
+    class="form-control mt-2"
+    placeholder="Nivel de poder"
+    [value]="powerlevel()"
+    (input)="powerlevel.set(+txtpowerLevel.value)"
+    #txtpowerLevel
+    />
+     <input type= "number" class="form-control mt-2" placeholder="Poder de ataque"/>
+
+
+     <button (click)="addCharacter()" class="btn btn-primary mt-2">Agregar</button>
+
+
+
