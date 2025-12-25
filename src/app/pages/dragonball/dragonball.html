@@ -4,11 +4,10 @@
 
 <section>
   <div class="col-12 col-sm-6">
-<<<<<<< HEAD
     <h3>Agregar personaje:{{name()}}</h3>
-    <input 
+    <input
     type= "text"
-    class="form-control" 
+    class="form-control"
     placeholder="Nombre del personaje"
     [value]="name()"
     (change)="name.set(txtName.value)"
@@ -16,25 +15,23 @@
     #txtName
 
     />
- 
-     <input 
+
+     <input
     type= "number"
-    class="form-control mt-2" 
+    class="form-control mt-2"
     placeholder="Nivel de poder"
     [value]="powerLevel()"
     (input)="powerLevel.set(+txtpowerLevel.value)"
     #txtpowerLevel
     />
-     
+
      <button class="addCharater()"class= "btn-primary ">Agregar</button>
-=======
     <h3>Agregar personaje</h3>
     <input type= "text" class="form-control" placeholder="Nombre del personaje"/>
      <input type= "number" class="form-control mt-2" placeholder="Poder de ataque"/>
 
 
      <button class="btn btn-primary ">Agregar</button>
->>>>>>> origin/main
   </div>
 
   <div class="col-12 col-sm-6 ">
@@ -46,13 +43,13 @@
 
         <li>
           <span>{{ idx + 1 }} - {{character.name}}</span>
-          <strong 
+          <strong
           [class.text-danger] = "character.powerLevel > 9001 "
           [class.text-primary] = "character.powerLevel < 9000 "
           >
             ({{ character.powerLevel }}) </strong>
           >
-          
+
         </li>
       }
       @else {

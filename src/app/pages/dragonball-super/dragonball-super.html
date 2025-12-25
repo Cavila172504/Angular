@@ -34,26 +34,7 @@
 
     <dragonball-character-list />
 
-    <h3>Lista de personajes</h3>
-    <ul>
-      @for(character of characters(); track character.id; let idx = $index){
-      @if (character.powerLevel > 5000) {
-
-        <li>
-          <span>{{ idx + 1 }} - {{character.name}}</span>
-          <strong
-          [class.text-danger] = "character.powerLevel > 9001 "
-          [class.text-primary] = "character.powerLevel < 9000 "
-          >
-            ({{ character.powerLevel }}) </strong>
-          >
-
-        </li>
-      }
-      @else {
-        <li><strong>No hay nada</strong></li>
-      }}
-    </ul>
+    
   </div>
 </section>
 
