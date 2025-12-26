@@ -16,22 +16,21 @@ import { CharacterApp } from "../../components/dragonball/character-app/characte
 })
 export class DragonballPagesuperComponent {
 
-    name = signal ('');
-    powerLevel = signal (0);
+    name = signal('');
+    powerLevel = signal(0);
 
     characters = signal<Character[]>([
-    {id:1,name:'goku',powerlevel:9001},
-    {id:1,name:'vegeta',powerlevel:8001},
+      { id: 1, name: 'goku', powerlevel: 9001 },
+      { id: 2, name: 'vegeta', powerlevel: 8001 },
+    ]);
 
-]);
+    addCharacter(newCharacter: Character){
+      this.characters.update((list: Character[]) => [...list, newCharacter]);
+    }
 
-addCharacter(newCharacter: Character){
-  this.characters.update((list) => [...list, newCharacter]);
-
-}
-resetFields(){
-    this.name.set('');
-    this.powerLevel.set(0);
-}
+    resetFields(){
+      this.name.set('');
+      this.powerLevel.set(0);
+    }
 
 }

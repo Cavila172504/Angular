@@ -1,11 +1,11 @@
-import { Component,  signal, output, Output } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, output } from '@angular/core';
 import { Character } from '../../../interface/character.interface';
 
 
 @Component({
   selector: 'dragonball-character-app',
   templateUrl: './character-app.html',
-
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CharacterApp {
   name = signal<string>('');
